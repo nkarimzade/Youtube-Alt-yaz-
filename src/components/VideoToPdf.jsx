@@ -1,3 +1,4 @@
+// VideoToPdf.js
 import React, { useState, useRef } from 'react';
 import { Youtube, FileText, Share2, Loader2, Info, BarChart2, Calendar } from 'lucide-react';
 import ReactPlayer from 'react-player';
@@ -14,9 +15,10 @@ const VideoToPdf = () => {
   const [shareOpen, setShareOpen] = useState(false);
   const shareMenuRef = useRef();
 
-  // İstatistikler için örnek veri
   const totalSummarized = 42 + recentVideos.length;
   const lastSummaryDate = recentVideos[0]?.date || new Date().toLocaleDateString('tr-TR');
+
+  const API_BASE = 'https://youtube-alt-yaz-backend.onrender.com';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ const VideoToPdf = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('https://youtube-alt-yaz-backend.onrender.com', {
+      const response = await fetch(`${API_BASE}/api/video-info`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: videoUrl }),
@@ -37,7 +39,10 @@ const VideoToPdf = () => {
 
       const infoData = await response.json();
       setVideoInfo({ ...infoData, url: videoUrl });
-      setRecentVideos(prev => [{ ...infoData, url: videoUrl, date: new Date().toLocaleDateString('tr-TR') }, ...prev].slice(0, 3));
+      setRecentVideos(prev => [
+        { ...infoData, url: videoUrl, date: new Date().toLocaleDateString('tr-TR') },
+        ...prev,
+      ].slice(0, 3));
     } catch (err) {
       setError(err.message);
     } finally {
@@ -49,16 +54,19 @@ const VideoToPdf = () => {
     if (!videoInfo || !videoInfo.url) return;
     setPdfLoading(true);
     setError('');
+
     try {
-      const response = await fetch('https://youtube-alt-yaz-backend.onrender.com', {
+      const response = await fetch(`${API_BASE}/api/create-pdf`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: videoInfo.url }),
       });
+
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error || 'PDF oluşturulamadı');
       }
+
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -89,7 +97,7 @@ const VideoToPdf = () => {
     <div className="vtp-container">
       <h1 className="vtp-title">YouTube Video Özetleyici</h1>
       <div className="vtp-desc">
-        <Info size={18} /> Yapay zekayla saniyeler içinde video özeti ve altyazı!
+        <Info size={18} /> Yapay zekayla saniyeler içinde video özeti ve !
       </div>
       <div className="vtp-stats">
         <span><BarChart2 size={16} /> Toplam özetlenen: <b>{totalSummarized}</b></span>
