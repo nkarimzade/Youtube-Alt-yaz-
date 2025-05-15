@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px 1px #00bfa6;
+  background-color: black;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.navbar .logo h1 {
+  margin: 0;
+  font-size: 20px;
+  color: white;
+}
+
+.navbar .logo span {
+  color: #00bfa6;
+}
+
+.navbar .social {
+  font-size: 25px;
+  color: darkgray;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social a {
+  color: darkgray;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+}
+
+.social a:hover {
+  color: #00bfa6;
+}
+
+/* 🎯 RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    align-items: flex-start;
+  }
+
+  .navbar .logo {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .navbar .social {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-size: 22px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .logo h1 {
+    font-size: 18px;
+  }
+
+  .navbar .social {
+    font-size: 20px;
+  }
+
+  .social a {
+    margin-right: 10px;
+  }
+}

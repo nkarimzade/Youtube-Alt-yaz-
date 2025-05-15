@@ -1,0 +1,359 @@
+body, html {
+  background: #181a1b;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+  width: 100%;
+}
+
+.vtp-container {
+  margin: 180px auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  background: #23272b;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25);
+  padding: 2rem 1rem 2rem 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vtp-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.vtp-desc {
+  width: 100%;
+  text-align: center;
+  color: #00bfa6;
+  font-size: 1.08rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.vtp-stats {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  color: #bbb;
+  font-size: 0.98rem;
+  margin-bottom: 1.2rem;
+}
+
+.vtp-stats span {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.vtp-form .flex {
+  display: flex;
+  gap: 0.7rem;
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+.input-group {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: center;
+  background: #181a1b;
+  border-radius: 12px;
+  border: 1.5px solid #333;
+  padding: 0.5rem 1.3rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  width: 100%;
+  min-width: 260px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.input-group:focus-within {
+  box-shadow: 0 0 0 2px #00bfa6;
+  border-color: #00bfa6;
+}
+
+.input-group input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  flex: 1;
+  width: 100%;
+}
+
+.button-main {
+  background: linear-gradient(90deg, #00bfa6 0%, #00a896 100%);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 300;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(0,191,166,0.10);
+  width: 50%;
+  max-width: 160px;
+  transition: 1s ease-in-out;
+}
+
+.button-main:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(90deg, #00a896 0%, #00bfa6 100%);
+  box-shadow: 0 4px 16px 0 rgba(0,191,166,0.18);
+}
+
+.button-secondary {
+  background: #23272b;
+  color: #00bfa6;
+  padding: 0.6rem 1.2rem;
+  border: 1.5px solid #333;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s, color 0.2s;
+  margin-left: 0.5rem;
+  width: 100%;
+  max-width: 140px;
+}
+
+.button-secondary:hover {
+  background: #181a1b;
+  border-color: #00bfa6;
+  color: #fff;
+}
+
+.error-message {
+  color: #ff4b2b;
+  background: #2a1a1a;
+  border: 1.5px solid #ff4b2b;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.vtp-how {
+  width: 100%;
+  background: #23272b;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1.2rem;
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px 0 rgba(0,191,166,0.06);
+}
+
+.vtp-how ol {
+  margin: 0.5rem 0 0 1.2rem;
+  padding: 0;
+  font-size: 0.98rem;
+}
+
+.vtp-detail {
+  width: 100%;
+  background: #181a1b;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px 0 rgba(0,191,166,0.04);
+  padding: 1.2rem 1rem;
+  margin-bottom: 1.2rem;
+  color: #fff;
+}
+
+.vtp-summary-btns {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.share-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #23272b;
+  border: 1.5px solid #333;
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  z-index: 100;
+  min-width: 160px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+}
+
+.share-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #00bfa6;
+  text-decoration: none;
+  font-weight: 500;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: background 0.2s, color 0.2s;
+}
+
+.share-item:hover {
+  background: #181a1b;
+  color: #fff;
+}
+
+.vtp-subtitle {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+  color: #fff;
+  font-weight: 700;
+  border-left: 4px solid #00bfa6;
+  padding-left: 0.7rem;
+  width: 100%;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.card {
+  background: #23272b;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px 0 rgba(0,191,166,0.08);
+  padding: 1rem;
+  transition: box-shadow 0.2s, transform 0.1s;
+  color: #fff;
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px 0 #00bfa655;
+  transform: translateY(-2px) scale(1.03);
+}
+
+.card-content h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #00bfa6;
+}
+
+.card-content p {
+  color: #fff;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.card-date {
+  display: block;
+  color: #bbb;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+@media (max-width: 768px) {
+  .vtp-container {
+    padding: 1.5rem;
+    width: 100%;
+    margin: 80px auto;
+    max-width: 95%;
+  }
+
+  .vtp-title {
+    font-size: 1.7rem;
+  }
+
+  .vtp-desc {
+    font-size: 1rem;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .vtp-stats {
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+    gap: 0.8rem;
+  }
+
+  .vtp-form .flex {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .button-main,
+  .button-secondary {
+    width: 100%;
+    max-width: none;
+  }
+
+  .vtp-summary-btns {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .vtp-subtitle {
+    font-size: 1rem;
+  }
+
+  .card-list {
+    grid-template-columns: 1fr;
+  }
+
+  .card-content h3 {
+    font-size: 1rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vtp-title {
+    font-size: 1.5rem;
+  }
+
+  .vtp-desc {
+    font-size: 0.95rem;
+  }
+
+  .vtp-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .input-group input {
+    font-size: 0.95rem;
+  }
+
+  .card-content h3 {
+    font-size: 0.95rem;
+  }
+
+  .card-content p {
+    font-size: 0.85rem;
+  }
+
+  .vtp-detail {
+    padding: 0.5rem;
+  }
+}
