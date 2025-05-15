@@ -24,7 +24,7 @@ const VideoToPdf = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/video-info', {
+      const response = await fetch('https://youtube-alt-yaz-backend.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: videoUrl }),
@@ -50,7 +50,7 @@ const VideoToPdf = () => {
     setPdfLoading(true);
     setError('');
     try {
-      const response = await fetch('http://localhost:5000/api/create-pdf', {
+      const response = await fetch('https://youtube-alt-yaz-backend.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: videoInfo.url }),
