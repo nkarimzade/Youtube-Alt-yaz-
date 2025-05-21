@@ -17,9 +17,28 @@
 }
 
 .navbar .logo h1 {
-  margin: 0;
+  margin: 10px 0;
   font-size: 20px;
   color: white;
+
+}
+
+.navbar .logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin:0 20px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out
+}
+
+.logo-img:hover{
+  filter: drop-shadow(1px 1px 15px #00ffff);
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  
 }
 
 .navbar .logo span {
