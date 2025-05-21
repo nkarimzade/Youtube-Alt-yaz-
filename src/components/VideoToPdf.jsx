@@ -97,7 +97,7 @@ const VideoToPdf = () => {
     <div className="vtp-container">
       <h1 className="vtp-title">YouTube Video Özetleyici</h1>
       <div className="vtp-desc">
-        <Info size={18} /> Yapay zekayla saniyeler içinde video özeti ve !
+        <Info size={18} /> Yapay zekayla saniyeler içinde video özeti !
       </div>
       <div className="vtp-stats">
         <span><BarChart2 size={16} /> Toplam özetlenen: <b>{totalSummarized}</b></span>
