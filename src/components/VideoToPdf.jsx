@@ -15,7 +15,7 @@ const VideoToPdf = () => {
   const [shareOpen, setShareOpen] = useState(false);
   const shareMenuRef = useRef();
 
-  const totalSummarized = 42 + recentVideos.length;
+  const totalSummarized = 1856+ recentVideos.length;
   const lastSummaryDate = recentVideos[0]?.date || new Date().toLocaleDateString('tr-TR');
 
   const API_BASE = 'https://youtube-alt-yaz-backend.onrender.com';
